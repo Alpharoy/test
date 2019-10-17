@@ -1,0 +1,506 @@
+@import "bootstrap/bootstrap";
+
+html, body, .app-container {
+  height: 100%;
+  min-width: 1200px;
+}
+
+code {
+  white-space: pre-line;
+}
+
+// 动画特效
+.slide-fade-enter-active {
+  transition: all .2s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.top-container {
+  margin-bottom: 10px;
+  // 列表搜索表单靠右
+  .search-form {
+    text-align: right;
+
+    // 搜索表单元素无右边距
+    .el-form-item {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    // 搜索表单中搜索框长一点
+    .longer-input {
+      width: 300px;
+    }
+  }
+}
+
+.search-widget {
+  position: relative;
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .display-tips {
+    position: absolute;
+    font-size: 12px;
+    background-color: #409EFF;
+    text-align: center;
+    padding: 2px 4px;
+    color: #FFF;
+    cursor: pointer;
+  }
+
+  .el-card {
+    margin-bottom: 6px;
+
+    .el-card__body {
+      padding: 10px 10px 0;
+      min-height: 6px;
+    }
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+
+    input[type="text"] {
+      width: 180px;
+    }
+  }
+
+  .el-form-button {
+    float: right;
+    margin-right: 0;
+  }
+
+  // 运单号码批量查询 textarea
+  .multiple-waybill-uuid {
+    float: left;
+    margin-right: 15px;
+
+    textarea {
+      height: 116px;
+      width: 180px;
+    }
+  }
+}
+
+.form-box-card {
+  //min-width: 500px;
+  margin-bottom: 10px;
+  overflow: auto;
+
+  .plate-prefix {
+    width: 130px;
+  }
+}
+
+.ql-message-box {
+  vertical-align: 0;
+}
+
+/* 证件照开始 */
+.certificate-container {
+  &.form-picture-container {
+    .el-card__body {
+      line-height: 0;
+      height: 90px;
+
+      img.certificate-image {
+        height: auto;
+      }
+    }
+  }
+
+  .el-card__body {
+    padding: 0;
+    position: relative;
+
+    .loading-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 50px;
+      background-color: rgba(255, 255, 255, .7);
+
+      .el-icon-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+      }
+    }
+
+    .el-upload {
+      width: 100%;
+      line-height: 0;
+      background: no-repeat center center;
+    }
+
+    img.certificate-image {
+      width: 100%;
+      height: 200px;
+    }
+
+    .certificate-name {
+      text-align: center;
+      margin-top: -13px;
+    }
+  }
+}
+
+/* 证件照结束 */
+
+/* 签收图片开始 */
+.form-picture-container {
+  &.el-form-item--small.el-form-item {
+    margin-bottom: 0;
+  }
+
+  .el-upload-list--picture-card {
+    height: 90px;
+    display: inline-block;
+  }
+
+  .el-upload-list__item {
+    width: 90px;
+    height: 90px;
+    margin-right: 2px;
+    margin-bottom: 0;
+
+    img.el-upload-list__item-thumbnail {
+      height: auto;
+    }
+  }
+
+  .el-upload--picture-card {
+    width: 90px;
+    height: 90px;
+    line-height: 98px;
+  }
+}
+
+/* 签收图片结束 */
+
+/* 图片查看开始 */
+.picture-dialog {
+  width: 700px;
+
+  .el-dialog__body {
+    padding: 10px;
+  }
+
+  .loading-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, .7);
+    z-index: 100;
+
+    .el-icon-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+    }
+  }
+
+  .picture-container {
+    position: relative;
+
+    .btn-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    .btn-container {
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+
+      width: 40px;
+
+      .icon {
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        left: 50%;
+        margin-left: -15px;
+      }
+
+      .icon:hover {
+        font-size: 40px;
+        margin-top: -20px;
+        margin-left: -20px;
+        cursor: pointer;
+      }
+    }
+
+    .img-container {
+      width: 600px;
+      height: 600px;
+      margin: 0 auto;
+      position: relative;
+
+      img {
+        border-radius: 4px;
+        position: absolute;
+      }
+    }
+  }
+
+  .picture-page {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* 图片查看结束 */
+
+/* 图片列表开始 */
+.image-list {
+  &:before, &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .image-item {
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    .el-card__body {
+      padding: 0;
+      position: relative;
+
+      img.image {
+        width: 100%;
+        height: 200px;
+      }
+
+      .name {
+        padding: 10px 0;
+        text-align: center;
+        border-top: 1px solid #ebeef5;
+        line-height: 1.15;
+      }
+    }
+  }
+}
+
+/* 图片列表结束 */
+
+.ql-dialog {
+  .el-dialog__body {
+    padding: 10px 20px 0;
+  }
+}
+
+/* 回复异常件问题开始 */
+.reply-collapse {
+  margin: 10px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .el-collapse-item__header {
+    height: 32px;
+    line-height: 32px;
+
+    .el-collapse-item__arrow {
+      line-height: 32px;
+    }
+  }
+
+  .el-collapse-item__content {
+    padding-bottom: 10px;
+  }
+
+  .el-collapse-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .reply-time {
+    float: right;
+    padding-right: 20px;
+  }
+}
+
+/* 回复异常件问题结束 */
+
+// 输入建议
+.suggestion {
+  li {
+    line-height: normal;
+    padding: 7px;
+
+    .first-title {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .second-title {
+      font-size: 12px;
+      color: #b4b4b4;
+    }
+
+    .highlighted .second-title {
+      color: #ddd;
+    }
+
+  }
+}
+
+.el-input.input-error {
+  .el-input__inner {
+    border-top-color: #F00;
+    border-left-color: #f00;
+    border-bottom-color: #F00;
+    color: #F00;
+  }
+
+  .el-input-group__append {
+    border-top-color: #F00;
+    border-right-color: #f00;
+    border-bottom-color: #F00;
+  }
+}
+
+.has-loading {
+  position: relative;
+
+  .form-box-loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, .7);
+    z-index: 9999;
+
+    .el-icon-loading {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      font-size: 50px;
+    }
+  }
+}
+
+// 追踪查询
+.trace-record-collapse {
+  .el-collapse-item__header {
+    font-weight: bold;
+    color: #fd7e14;
+  }
+}
+
+// 处理含有合计的表格固定列拖动条被遮挡问题
+.summary-fixed-table .el-table--scrollable-x .el-table__body-wrapper {
+  z-index: 2;
+}
+
+// 企业图片上传
+.logistics-picture-upload {
+  .el-upload-list--picture-card {
+    height: 90px;
+    display: inline-block;
+  }
+
+  .el-upload-list__item {
+    width: 90px;
+    height: 90px;
+    margin-right: 2px;
+    margin-bottom: 0;
+  }
+
+  .el-upload--picture-card {
+    width: 90px;
+    height: 90px;
+    line-height: 98px;
+  }
+}
+
+// 站点穿梭框的父级模态框宽度调整
+.site-transfer-dialog {
+  width: 900px;
+
+  // 站点穿梭框宽度调整
+  .site-transfer .el-transfer-panel {
+    width: 382px;
+  }
+}
+
+// 交接单详情页面样式
+.handover-page {
+  .el-card__header {
+    padding: 9px 20px 9px 30px;
+    position: relative;
+
+    .display-tips {
+      position: absolute;
+      font-size: 12px;
+      background-color: #409EFF;
+      text-align: center;
+      padding: 2px 4px;
+      color: #FFF;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+    }
+
+    .handover-quote-btn {
+      position: absolute;
+      right: 20px;
+      top: 2px;
+    }
+  }
+
+  .quote-dialog {
+    z-index: 100;
+    width: 250px;
+    padding: 10px 10px 0 10px;
+    top: 144px;
+
+    .el-notification__group {
+      padding-left: 0;
+
+      .el-notification__content {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .handover-form {
+    .el-form-item--small.el-form-item {
+      margin-bottom: 10px;
+    }
+  }
+}

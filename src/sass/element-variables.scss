@@ -1,0 +1,8 @@
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/* !!!! IMPORTANT: 颜色变量变更必须在此样式引入之前 !!!! */
+@import "~element-ui/packages/theme-chalk/src/index";
+
+/* ElementUI 扩展样式 */
+@import "element-extends";

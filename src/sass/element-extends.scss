@@ -1,0 +1,179 @@
+@import "~element-ui/packages/theme-chalk/src/common/var";
+
+/***************
+ * 变量设置
+ ***************/
+/* 顶部导航栏颜色 */
+$color-border: #D9DEE4;
+$color-top-menu-bg: #EDEDED;
+$color-top-menu-text: #354458;
+
+/* 左侧菜单栏颜色 */
+$color-left-menu-bg: #354458;
+$color-left-menu-text: #dddddd;
+$color-left-menu-bg-active: #4C627F;
+$color-left-menu-text-active: #ffffff;
+
+/***************
+ * 样式应用
+ ***************/
+/* 顶部导航栏样式 */
+.el-header {
+  background-color: $color-top-menu-bg;
+  color: $color-top-menu-text;
+  border-bottom: $color-border solid 1px;
+}
+
+.sidebar-toggler-icon {
+  color: $color-top-menu-text;
+}
+
+/* 左侧菜单栏样式 */
+.el-menu {
+  background-color: $color-left-menu-bg;
+}
+
+.el-menu-item {
+  background-color: $color-left-menu-bg;
+  color: $color-left-menu-text;
+  &.is-active {
+    color: $color-left-menu-text-active;
+  }
+  &:hover, &:focus {
+    background-color: $color-left-menu-bg-active;
+  }
+}
+
+.el-submenu__title {
+  color: $color-left-menu-text;
+  &.is-active {
+    color: $color-left-menu-text-active;
+  }
+  &:hover {
+    background-color: $color-left-menu-bg-active;
+  }
+}
+
+.sidebar-menu {
+  .aside-header {
+    color: $color-left-menu-text;
+  }
+
+  .sidebar-menu {
+    color: $color-left-menu-text;
+  }
+
+}
+
+/* 内容区域样式 */
+.el-main {
+  padding: 0;
+  flex-direction: column;
+  display: flex;
+  background-color: $--color-white;
+
+  .flex-container {
+    &.y-hidden {
+      overflow-y: hidden;
+    }
+
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .flex-row {
+      flex: 1;
+
+      .flex-height-container {
+        height: 100%;
+        overflow: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .main-tab {
+    padding: 10px 0 0 0;
+  }
+  .main-content {
+    padding: 10px;
+    display: flex;
+    flex: 1;
+  }
+
+  .flex-tabs {
+    .el-tabs__content {
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .el-tab-pane {
+        flex: 1;
+        flex-direction: column;
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+.el-aside {
+  background-color: $color-left-menu-bg;
+}
+
+/* 表格样式 */
+.el-table {
+  th {
+    background-color: $--background-color-base;
+  }
+
+  .success-row {
+    background-color: $--alert-success-color;
+    color: $--color-success;
+  }
+
+  .info-row {
+    background-color: $--alert-info-color;
+    color: $--color-info;
+  }
+
+  .warning-row {
+    background-color: $--alert-warning-color;
+    color: $--color-warning;
+  }
+
+  .error-row {
+    background-color: $--alert-danger-color;
+    color: $--color-danger;
+  }
+}
+
+/* 卡片样式 */
+.el-card {
+  .el-card-info-title {
+    padding: 18px 20px;
+    margin: -10px -10px 10px;
+    border-bottom: 1px solid #ebeef5;
+    box-sizing: border-box;
+  }
+}
+
+.el-card__body {
+  padding: 10px;
+}
+
+/* 分页信息 */
+.el-pagination {
+  margin-top: 10px;
+}
+
+/* 输入框 */
+.el-input.is-disabled {
+  .el-input__inner {
+    color: $--input-color;
+  }
+}

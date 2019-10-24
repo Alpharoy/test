@@ -19,7 +19,7 @@
             <el-table-column prop="invoice_title" label="发票抬头" min-width="120"/>
             <el-table-column prop="bank_name" label="银行名称" min-width="120"/>
             <el-table-column prop="status_name" label="状态" width="80"/>
-            <el-table-column label="创建时间" width="180">
+            <el-table-column label="创建时间" width="150">
                 <template slot-scope="scope">
                     {{scope.row.create_time | qlDateTime}}
                 </template>

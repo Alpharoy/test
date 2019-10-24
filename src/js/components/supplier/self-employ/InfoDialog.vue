@@ -182,7 +182,7 @@
         },
         methods: {
             onOpen() {
-                api.supplier().get(helpers.convertURL(supplierURL.get_self_employ, {selfEmployUUID: this.selfEmployUUID})).then((response) => {
+                api.supplier().get(helpers.convertURL(supplierURL.get_supplier_self_employ, {selfEmployUUID: this.selfEmployUUID})).then((response) => {
                     this.selfEmploy = response.data.self_employ;
                     if (this.selfEmploy.business_license_photo) {
                         this.businessLicensePhoto = [{

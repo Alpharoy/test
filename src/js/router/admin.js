@@ -7,23 +7,19 @@ import LoginIndexPage from '../pages/admin/login/Index';
 import LoginLogoutPage from '../pages/admin/login/Logout';
 import DashboardPage from '../pages/admin/Dashboard';
 
-import AdminIndexPage from '../pages/admin/admin/Index';
-
 import PermissionRoleIndexPage from '../pages/admin/permission/RoleIndex';
 import PermissionMenuIndexPage from '../pages/admin/permission/MenuIndex';
 
-// 企业管理
-import EnterpriseIndexPage from '../pages/admin/enterprise/Index';
-// 供应商管理
-import SupplierIndexPage from '../pages/admin/supplier/Index';
-//合约管理
-import ContractIndexPage from '../pages/admin/contract/Index';
-//项目管理
-import ProjectIndexPage from '../pages/admin/project/Index';
-//个体管理
+import AdminIndexPage from '../pages/admin/admin/Index';
 import SelfEmployIndexPage from '../pages/admin/self-employ/Index';
-//自然人管理
 import NaturalPersonIndexPage from '../pages/admin/natural-person/Index';
+import EnterpriseIndexPage from '../pages/admin/enterprise/Index';
+import SupplierIndexPage from '../pages/admin/supplier/Index';
+import ContractIndexPage from '../pages/admin/contract/Index';
+import ProjectIndexPage from '../pages/admin/project/Index';
+import TaskIndexPage from '../pages/admin/task/Index';
+
+
 // 配合权限管理，在meta中加2个属性
 // allow 为 true 表示 无需经过权限认证
 // sign 表示该节点对应的权限标志
@@ -139,6 +135,19 @@ const routes = [
                 name: 'natural-persons',
                 component: NaturalPersonIndexPage,
                 meta: {title: '自然人列表', sign: 'GET ' + adminURL.natural_person_list},
+            },
+        ],
+    },
+    {
+        path: '',
+        component: AppLayout,
+        meta: {title: '任务订单', icon: 'tasks'},
+        children: [
+            {
+                path: '/tasks',
+                name: 'tasks',
+                component: TaskIndexPage,
+                meta: {title: '任务订单', sign: 'GET ' + adminURL.task_list},
             },
         ],
     },

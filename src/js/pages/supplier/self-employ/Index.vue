@@ -69,7 +69,7 @@
                 this.fetchSelfEmploy(query.page, query);
             },
             fetchSelfEmploy(page, query) {
-                api.supplier().get(this.convertURL(supplierURL.self_employ_list), helpers.buildQuery(page, query)).then(response => {
+                api.supplier().get(this.convertURL(supplierURL.supplier_self_employ_list), helpers.buildQuery(page, query)).then(response => {
                     this.listData = response;
                 });
             },

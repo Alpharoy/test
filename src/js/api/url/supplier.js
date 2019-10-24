@@ -49,10 +49,19 @@ export default {
     project_audit_status: 'projects/{projectUUID}/audit-status',
 
     // 个体工商管理
+    supplier_self_employ_list: 'suppliers/self-employs',
+    get_supplier_self_employ: 'suppliers/self-employs/{selfEmployUUID}',
     self_employ_list: 'self-employs',
-    get_self_employ: 'self-employs/{selfEmployUUID}',
 
     // 自然人管理
+    supplier_natural_person_list: 'suppliers/natural-persons',
+    get_supplier_natural_person: 'suppliers/natural-persons/{userUUID}',
     natural_person_list: 'natural-persons',
-    get_natural_person: 'natural-persons/{userUUID}',
+
+    // 任务订单
+    task_list: 'tasks',
+    get_task: 'tasks/{taskUUID}',
+    update_task: 'tasks/{taskUUID}',
+    task_reject: 'tasks/{taskUUID}/reject',
+    task_accept: 'tasks/{taskUUID}/accept',
 };

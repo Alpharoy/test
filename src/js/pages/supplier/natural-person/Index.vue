@@ -75,7 +75,7 @@
                 this.fetchNaturalPerson(query.page, query);
             },
             fetchNaturalPerson(page, query) {
-                api.supplier().get(this.convertURL(supplierURL.natural_person_list), helpers.buildQuery(page, query)).then(response => {
+                api.supplier().get(this.convertURL(supplierURL.supplier_natural_person_list), helpers.buildQuery(page, query)).then(response => {
                     this.listData = response;
                 });
             },

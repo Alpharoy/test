@@ -4,6 +4,7 @@ import contract from './contract';
 import supplier from './supplier';
 import project from './project';
 import driver from './driver';
+import task from './task';
 
 const smaple = {
     label: '字段名',
@@ -26,4 +27,5 @@ export default {
     supplier: supplier,
     project: project,
     driver: driver,
+    task: task,
 }

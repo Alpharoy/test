@@ -118,7 +118,7 @@
         },
         methods: {
             onOpen() {
-                api.enterprise().get(helpers.convertURL(enterpriseURL.get_natural_person, {userUUID: this.uuid})).then((response) => {
+                api.enterprise().get(helpers.convertURL(enterpriseURL.get_enterprise_natural_person, {userUUID: this.uuid})).then((response) => {
                     this.naturalPerson = response.data.natural_person;
                     if (this.naturalPerson.certificate_photo_front) {
                         this.certificatePhotoFront = [{

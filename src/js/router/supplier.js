@@ -6,17 +6,14 @@ import withCheckVersion from './check-version';
 import LoginIndexPage from '../pages/supplier/login/Index';
 import LoginLogoutPage from '../pages/supplier/login/Logout';
 import DashboardPage from '../pages/supplier/Dashboard';
-// 供应商管理
+
 import SupplierIndexPage from '../pages/supplier/supplier/Index';
 import SupplierSubjectIndexPage from '../pages/supplier/supplier/supplier-subject/Index';
-//合约管理
-import ContractIndexPage from '../pages/supplier/contract/Index';
-//项目管理
-import ProjectIndexPage from '../pages/supplier/project/Index';
-//个体管理
 import SelfEmployIndexPage from '../pages/supplier/self-employ/Index';
-//自然人管理
 import NaturalPersonIndexPage from '../pages/supplier/natural-person/Index';
+import ContractIndexPage from '../pages/supplier/contract/Index';
+import ProjectIndexPage from '../pages/supplier/project/Index';
+import TaskIndexPage from '../pages/supplier/task/Index';
 
 
 // 配合权限管理，在meta中加2个属性
@@ -97,13 +94,13 @@ const routes = [
                 path: '/self-employs',
                 name: 'self-employs',
                 component: SelfEmployIndexPage,
-                meta: {title: '个体列表', sign: 'GET ' + supplierURL.self_employ_list},
+                meta: {title: '个体列表', sign: 'GET ' + supplierURL.supplier_self_employ_list},
             },
             {
                 path: '/natural-persons',
                 name: 'natural-persons',
                 component: NaturalPersonIndexPage,
-                meta: {title: '自然人列表', sign: 'GET ' + supplierURL.natural_person_list},
+                meta: {title: '自然人列表', sign: 'GET ' + supplierURL.supplier_natural_person_list},
             },
         ],
     },
@@ -117,6 +114,19 @@ const routes = [
                 name: 'projects',
                 component: ProjectIndexPage,
                 meta: {title: '项目列表', sign: 'GET ' + supplierURL.project_list},
+            },
+        ],
+    },
+    {
+        path: '',
+        component: AppLayout,
+        meta: {title: '任务订单', icon: 'tasks'},
+        children: [
+            {
+                path: '/tasks',
+                name: 'tasks',
+                component: TaskIndexPage,
+                meta: {title: '任务订单', sign: 'GET ' + supplierURL.task_list},
             },
         ],
     },

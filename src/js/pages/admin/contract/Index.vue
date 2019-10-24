@@ -57,9 +57,6 @@
             };
         },
         computed: {
-            contractUUID: function () {
-                return this.$route.params.contractUUID || '';
-            },
         },
         methods: {
             urFetchData() {

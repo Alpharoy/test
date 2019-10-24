@@ -7,15 +7,12 @@ import LoginIndexPage from '../pages/enterprise/login/Index';
 import LoginLogoutPage from '../pages/enterprise/login/Logout';
 import DashboardPage from '../pages/enterprise/Dashboard';
 
-// 企业管理
+import SelfEmployIndexPage from '../pages/enterprise/self-employ/Index';
+import NaturalPersonIndexPage from '../pages/enterprise/natural-person/Index';
 import EnterpriseIndexPage from '../pages/enterprise/enterprise/Index';
-//合约管理
 import ContractIndexPage from '../pages/enterprise/contract/Index';
 import ProjectIndexPage from '../pages/enterprise/project/Index';
-//个体管理
-import SelfEmployIndexPage from '../pages/enterprise/self-employ/Index';
-//自然人管理
-import NaturalPersonIndexPage from '../pages/enterprise/natural-person/Index';
+import TaskIndexPage from '../pages/enterprise/task/Index';
 
 // 配合权限管理，在meta中加2个属性
 // allow 为 true 表示 无需经过权限认证
@@ -90,13 +87,13 @@ const routes = [
                 path: '/self-employs',
                 name: 'self-employs',
                 component: SelfEmployIndexPage,
-                meta: {title: '个体列表', sign: 'GET ' + enterpriseURL.self_employ_list},
+                meta: {title: '个体列表', sign: 'GET ' + enterpriseURL.enterprise_self_employ_list},
             },
             {
                 path: '/natural-persons',
                 name: 'natural-persons',
                 component: NaturalPersonIndexPage,
-                meta: {title: '自然人列表', sign: 'GET ' + enterpriseURL.natural_person_list},
+                meta: {title: '自然人列表', sign: 'GET ' + enterpriseURL.enterprise_natural_person_list},
             },
         ],
     },
@@ -111,6 +108,19 @@ const routes = [
                 name: 'projects',
                 component: ProjectIndexPage,
                 meta: {title: '项目列表', sign: 'GET ' + enterpriseURL.project_list},
+            },
+        ],
+    },
+    {
+        path: '',
+        component: AppLayout,
+        meta: {title: '任务订单', icon: 'tasks'},
+        children: [
+            {
+                path: '/tasks',
+                name: 'tasks',
+                component: TaskIndexPage,
+                meta: {title: '任务订单', sign: 'GET ' + enterpriseURL.task_list},
             },
         ],
     },

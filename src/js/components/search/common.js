@@ -15,7 +15,7 @@ export default {
     industry_type_code: {
         label: '行业类型',
         type: 'select',
-        attr: {options: helpers.cons('common.industry_type'), option_type: 'int'}
+        attr: {options: helpers.cons('common.industry_type'), option_type: 'string'}
     },
     usci_number: {label: '统一信用代码', type: 'text'},
     artificial_person_name: {label: '法人姓名', type: 'text'},

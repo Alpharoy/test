@@ -97,4 +97,8 @@ export default {
     get_natural_person_bank_card: 'natural-persons/{userUUID}/bank-cards/{bankCardUUID}',
     update_natural_person_bank_card: 'natural-persons/{userUUID}/bank-cards/{bankCardUUID}',
     delete_natural_person_bank_card: 'natural-persons/{userUUID}/bank-cards/{bankCardUUID}',
+
+    // 任务订单
+    task_list: 'tasks',
+    get_task: 'tasks/{taskUUID}',
 };

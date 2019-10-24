@@ -1,8 +1,10 @@
 import common from './common';
-import contract from "./contract";
+import contract from './contract';
+import task from './task';
 
 
 export default {
     common: common,
-    contract:contract,
+    contract: contract,
+    task: task,
 }

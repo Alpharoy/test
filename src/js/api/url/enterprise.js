@@ -34,7 +34,7 @@ export default {
 
     // 供应商
     supplier_list: 'suppliers',
-    supplier_subject_list: 'supplier-subjects',
+    supplier_subject_list: 'suppliers/{supplierUUID}/supplier-subjects',
 
     // 合约列表
     contract_list: 'contracts',
@@ -51,10 +51,19 @@ export default {
     delete_project: 'projects/{projectUUID}',
 
     // 个体工商管理
+    enterprise_self_employ_list: 'enterprises/self-employs',
+    get_enterprise_self_employ: 'enterprises/self-employs/{selfEmployUUID}',
     self_employ_list: 'self-employs',
-    get_self_employ: 'self-employs/{selfEmployUUID}',
 
     // 自然人管理
+    enterprise_natural_person_list: 'enterprises/natural-persons',
+    get_enterprise_natural_person: 'enterprises/natural-persons/{userUUID}',
     natural_person_list: 'natural-persons',
-    get_natural_person: 'natural-persons/{userUUID}',
+
+    // 任务订单
+    task_list: 'tasks',
+    get_task: 'tasks/{taskUUID}',
+    add_task: 'tasks',
+    update_task: 'tasks/{taskUUID}',
+    delete_task: 'tasks/{taskUUID}',
 };

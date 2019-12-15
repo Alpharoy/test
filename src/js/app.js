@@ -6,8 +6,6 @@
 
 require('./bootstrap');
 
-// babel polyfill
-import '@babel/polyfill';
 
 import Vue from 'vue';
 

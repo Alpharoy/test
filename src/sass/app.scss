@@ -1,12 +1,18 @@
 @import "bootstrap/bootstrap";
+@import "~element-ui/packages/theme-chalk/src/common/var";
 
 html, body, .app-container {
   height: 100%;
-  min-width: 1200px;
 }
 
-code {
-  white-space: pre-line;
+.content {
+  width: auto;
+  padding: 40px;
+  background: #ffffff;
+}
+
+.el-main {
+  background: #fafafa;
 }
 
 // 动画特效
@@ -24,10 +30,11 @@ code {
 }
 
 .top-container {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   // 列表搜索表单靠右
   .search-form {
     text-align: right;
+    line-height: 40px;
 
     // 搜索表单元素无右边距
     .el-form-item {
@@ -42,86 +49,64 @@ code {
   }
 }
 
-.search-widget {
-  position: relative;
+.detail-table {
+  font-size: 12px;
 
-  &:before, &:after {
-    content: "";
-    display: block;
-    clear: both;
+  .el-row {
+    height: 40px;
   }
 
-  .display-tips {
-    position: absolute;
-    font-size: 12px;
-    background-color: #409EFF;
-    text-align: center;
-    padding: 2px 4px;
-    color: #FFF;
-    cursor: pointer;
+  .el-col {
+    height: 40px;
+    border: 1px solid #d7d7d7;
+    line-height: 40px;
+    padding: 0 5px;
   }
 
-  .el-card {
-    margin-bottom: 6px;
+  .title {
+    font-size: 14px;
+    text-align: right;
+    background-color: #f8f8f8;
+  }
+}
 
-    .el-card__body {
-      padding: 10px 10px 0;
-      min-height: 6px;
+.info-list {
+  .el-input {
+    width: 240px;
+  }
+}
+
+.image-list {
+  margin-bottom: 10px;
+
+  .el-col {
+    width: 100px;
+
+    img {
+      width: 100px;
+      height: 100px;
     }
   }
 
-  .el-form-item {
-    margin-bottom: 10px;
+}
 
-    input[type="text"] {
-      width: 180px;
-    }
-  }
-
-  .el-form-button {
-    float: right;
-    margin-right: 0;
-  }
-
-  // 运单号码批量查询 textarea
-  .multiple-waybill-uuid {
-    float: left;
-    margin-right: 15px;
-
-    textarea {
-      height: 116px;
-      width: 180px;
-    }
+.info-list {
+  .el-input {
+    width: 240px;
   }
 }
 
 .form-box-card {
-  //min-width: 500px;
+  min-width: 500px;
   margin-bottom: 10px;
-  overflow: auto;
 
   .plate-prefix {
     width: 130px;
   }
 }
 
-.ql-message-box {
-  vertical-align: 0;
-}
-
 /* 证件照开始 */
 .certificate-container {
-  &.form-picture-container {
-    .el-card__body {
-      line-height: 0;
-      height: 90px;
-
-      img.certificate-image {
-        height: auto;
-      }
-    }
-  }
-
   .el-card__body {
     padding: 0;
     position: relative;
@@ -147,7 +132,7 @@ code {
     .el-upload {
       width: 100%;
       line-height: 0;
-      background: no-repeat center center;
+      background: rgb(11, 211, 223) url("../images/image_bg.png") no-repeat center center;
     }
 
     img.certificate-image {
@@ -164,121 +149,65 @@ code {
 
 /* 证件照结束 */
 
-/* 签收图片开始 */
-.form-picture-container {
-  &.el-form-item--small.el-form-item {
-    margin-bottom: 0;
-  }
-
-  .el-upload-list--picture-card {
-    height: 90px;
-    display: inline-block;
-  }
-
-  .el-upload-list__item {
-    width: 90px;
-    height: 90px;
-    margin-right: 2px;
-    margin-bottom: 0;
-
-    img.el-upload-list__item-thumbnail {
-      height: auto;
-    }
-  }
-
-  .el-upload--picture-card {
-    width: 90px;
-    height: 90px;
-    line-height: 98px;
-  }
+// 分页距离顶部
+.el-pagination {
+  margin-top: 10px;
 }
 
-/* 签收图片结束 */
+/* 日志记录开始 */
+.log-list-container {
+  padding-left: 100px;
+  margin-top: 20px;
+}
 
-/* 图片查看开始 */
-.picture-dialog {
-  width: 700px;
-
-  .el-dialog__body {
-    padding: 10px;
-  }
-
-  .loading-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 50px;
-    background-color: rgba(255, 255, 255, .7);
-    z-index: 100;
-
-    .el-icon-loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -25px;
-      margin-left: -25px;
-    }
-  }
-
-  .picture-container {
+.log-list {
+  .item {
     position: relative;
+    padding-bottom: 100px;
 
-    .btn-container {
+    .line {
       position: absolute;
       top: 0;
       bottom: 0;
-    }
+      width: 1px;
+      left: 80px;
+      background-color: #DDD;
 
-    .btn-container {
-      &.left {
-        left: 0;
-      }
-
-      &.right {
-        right: 0;
-      }
-
-      width: 40px;
-
-      .icon {
-        font-size: 30px;
-        position: absolute;
-        top: 50%;
-        margin-top: -15px;
-        left: 50%;
-        margin-left: -15px;
-      }
-
-      .icon:hover {
-        font-size: 40px;
-        margin-top: -20px;
-        margin-left: -20px;
-        cursor: pointer;
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #DDD;
+        margin-left: -8px;
       }
     }
 
-    .img-container {
-      width: 600px;
-      height: 600px;
-      margin: 0 auto;
-      position: relative;
-
-      img {
-        border-radius: 4px;
-        position: absolute;
-      }
+    .title {
+      margin-top: -38px;
     }
-  }
 
-  .picture-page {
-    text-align: center;
-    margin-top: 10px;
+    .time {
+      width: 70px;
+      line-height: 20px;
+    }
+
+    .description, .remark, .time {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .title, .description, .remark, .image-list {
+      padding-left: 100px;
+      margin-bottom: 6px;
+    }
   }
 }
 
-/* 图片查看结束 */
+/* 日志记录结束 */
+
+.ql-message-box {
+  vertical-align: 0;
+}
 
 /* 图片列表开始 */
 .image-list {
@@ -321,38 +250,6 @@ code {
   }
 }
 
-/* 回复异常件问题开始 */
-.reply-collapse {
-  margin: 10px 0;
-  max-height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  .el-collapse-item__header {
-    height: 32px;
-    line-height: 32px;
-
-    .el-collapse-item__arrow {
-      line-height: 32px;
-    }
-  }
-
-  .el-collapse-item__content {
-    padding-bottom: 10px;
-  }
-
-  .el-collapse-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .reply-time {
-    float: right;
-    padding-right: 20px;
-  }
-}
-
-/* 回复异常件问题结束 */
-
 // 输入建议
 .suggestion {
   li {
@@ -376,131 +273,85 @@ code {
   }
 }
 
-.el-input.input-error {
+/* 输入框 */
+.el-input.is-disabled {
   .el-input__inner {
-    border-top-color: #F00;
-    border-left-color: #f00;
-    border-bottom-color: #F00;
-    color: #F00;
-  }
-
-  .el-input-group__append {
-    border-top-color: #F00;
-    border-right-color: #f00;
-    border-bottom-color: #F00;
+    color: $--input-font-color;
   }
 }
 
-.has-loading {
+/* 移动屏幕下，菜单隐藏 */
+@media (max-width: 768px) {
+  .el-menu--collapse {
+    width: 0;
+  }
+}
+
+/* 并列button之间的间隙 */
+.el-table__row {
+  .el-button + .el-button {
+    margin-left: 0;
+  }
+}
+
+/* 调节el-link字体大小 */
+.el-link {
+  font-size: 12px;
+}
+
+/* 表格样式 */
+.el-table {
+  .success-row {
+    color: #67c23a;
+  }
+
+  .warning-row {
+    color: #e6a23c;
+  }
+
+  .secondary-row {
+    color: darkgray;
+  }
+}
+
+.search-widget {
   position: relative;
 
-  .form-box-loading {
+  &:before, &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .display-tips {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, .7);
-    z-index: 9999;
-
-    .el-icon-loading {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      margin-top: -25px;
-      margin-left: -25px;
-      font-size: 50px;
-    }
-  }
-}
-
-// 追踪查询
-.trace-record-collapse {
-  .el-collapse-item__header {
-    font-weight: bold;
-    color: #fd7e14;
-  }
-}
-
-// 处理含有合计的表格固定列拖动条被遮挡问题
-.summary-fixed-table .el-table--scrollable-x .el-table__body-wrapper {
-  z-index: 2;
-}
-
-// 企业图片上传
-.logistics-picture-upload {
-  .el-upload-list--picture-card {
-    height: 90px;
-    display: inline-block;
+    font-size: 12px;
+    background-color: #409EFF;
+    text-align: center;
+    padding: 2px 4px;
+    color: #FFF;
+    cursor: pointer;
   }
 
-  .el-upload-list__item {
-    width: 90px;
-    height: 90px;
-    margin-right: 2px;
-    margin-bottom: 0;
-  }
+  .el-card {
+    margin-bottom: 6px;
 
-  .el-upload--picture-card {
-    width: 90px;
-    height: 90px;
-    line-height: 98px;
-  }
-}
-
-// 站点穿梭框的父级模态框宽度调整
-.site-transfer-dialog {
-  width: 900px;
-
-  // 站点穿梭框宽度调整
-  .site-transfer .el-transfer-panel {
-    width: 382px;
-  }
-}
-
-// 交接单详情页面样式
-.handover-page {
-  .el-card__header {
-    padding: 9px 20px 9px 30px;
-    position: relative;
-
-    .display-tips {
-      position: absolute;
-      font-size: 12px;
-      background-color: #409EFF;
-      text-align: center;
-      padding: 2px 4px;
-      color: #FFF;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-    }
-
-    .handover-quote-btn {
-      position: absolute;
-      right: 20px;
-      top: 2px;
+    .el-card__body {
+      padding: 10px 10px 0;
+      min-height: 6px;
     }
   }
 
-  .quote-dialog {
-    z-index: 100;
-    width: 250px;
-    padding: 10px 10px 0 10px;
-    top: 144px;
+  .el-form-item {
+    margin-bottom: 10px;
 
-    .el-notification__group {
-      padding-left: 0;
-
-      .el-notification__content {
-        margin-top: 10px;
-      }
+    input[type="text"] {
+      width: 180px;
     }
   }
 
-  .handover-form {
-    .el-form-item--small.el-form-item {
-      margin-bottom: 10px;
-    }
+  .el-form-button {
+    float: right;
+    margin-right: 0;
   }
 }

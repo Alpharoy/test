@@ -150,7 +150,9 @@ const searchAreasPromise = (name, minLevel = null, maxLevel = null) => {
 const areasPromise = new Promise((resolve, reject) => {
     fetchAreasPromise.then(areas => {
         const parsedAreas = {};
-
+        if(!areas){
+            return false;
+        }
         areas.forEach(area => {
             const [code, name, parentCode, level, isLast] = area;
             const parsedArea = {code, name, parentCode, level, isLast};

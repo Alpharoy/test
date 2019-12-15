@@ -28,10 +28,6 @@ build(){
 build_dev(){
   echo 'DEV'
 
-  #获取当前脚本文件位置，并切换到当前目录
-  SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
-  cd $SHELL_FOLDER
-
   #检查是否安装 npm
   if ! command -v yarn >/dev/null 2>&1; then
         echo '命令 yarn 不存在, 请安装后执行本脚本'
@@ -50,10 +46,6 @@ build_dev(){
 
 build_prod(){
   echo 'PROD'
-
-  #获取当前脚本文件位置，并切换到当前目录
-  SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
-  cd $SHELL_FOLDER
 
   #检查是否安装 npm
   if ! command -v npm >/dev/null 2>&1; then
@@ -80,19 +72,12 @@ createdir(){
   echo '创建相关目录'
 }
 
-setpermission(){
-  echo '不需设置可写权限'
-}
-
 case $1 in
     build)
         build $2
         ;;
     getconfig)
         getconfig
-        ;;
-    setpermission)
-        setpermission
         ;;
     *)
         echo "Usage: sh $0 {build|getconfig}"
